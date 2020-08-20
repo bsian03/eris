@@ -152,15 +152,13 @@ declare namespace Eris {
     largeThreshold?: number;
     lastShardID?: number;
     latencyThreshold?: number;
-    // Note: add maxReconnectAttmpets
-    // Note: add maxResumeAttemps
+    maxReconnectAttempts?: number
+    maxResumeAttempts?: number
     maxShards?: number | "auto";
     messageLimit?: number;
     opusOnly?: boolean;
-    // Note: add rateLimiterOffset
-    // Note add requestTimout
-    // Note: remove reconnectAttemps
-    reconnectAttempts?: number;
+    rateLimiterOffset?: number
+    requestTimeout?: number
     reconnectDelay?: ReconnectDelayFunction;
     restMode?: boolean;
     seedVoiceConnections?: boolean;
@@ -1756,13 +1754,13 @@ declare namespace Eris {
     createdAt: number;
     editedTimestamp?: number;
     embeds: Embed[];
-    // note: add flags
+    // Note: add flags
     guildID?: string;
     id: string;
     member: Member | null;
     mentionEveryone: boolean;
     mentions: User[];
-    // Note: add messageReference
+    messageReference: { messageID: string, channelID: string, guildID: string} | null
     pinned: boolean;
     prefix?: string;
     reactions: { [s: string]: any; count: number; me: boolean };
