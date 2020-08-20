@@ -1737,6 +1737,8 @@ declare namespace Eris {
   }
 
   export class Message<T extends Textable = TextableChannel> extends Base {
+    // Note: add activity
+    // Note: add application
     attachments: Attachment[];
     author: User;
     channel: T;
@@ -1747,11 +1749,13 @@ declare namespace Eris {
     createdAt: number;
     editedTimestamp?: number;
     embeds: Embed[];
+    // note: add flags
     guildID?: string;
     id: string;
     member: Member | null;
     mentionEveryone: boolean;
     mentions: User[];
+    // Note: add messageReference
     pinned: boolean;
     prefix?: string;
     reactions: { [s: string]: any; count: number; me: boolean };
@@ -1767,8 +1771,8 @@ declare namespace Eris {
     edit(content: MessageContent): Promise<Message<T>>;
     getReaction(reaction: string, limit?: number, before?: string, after?: string): Promise<User[]>;
     pin(): Promise<void>;
-    removeReactionEmoji(reaction: string): Promise<void>;
     removeReaction(reaction: string, userID?: string): Promise<void>;
+    removeReactionEmoji(reaction: string): Promise<void>;
     removeReactions(): Promise<void>;
     unpin(): Promise<void>;
   }
