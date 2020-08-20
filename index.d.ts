@@ -152,13 +152,13 @@ declare namespace Eris {
     largeThreshold?: number;
     lastShardID?: number;
     latencyThreshold?: number;
-    maxReconnectAttempts?: number
-    maxResumeAttempts?: number
+    maxReconnectAttempts?: number;
+    maxResumeAttempts?: number;
     maxShards?: number | "auto";
     messageLimit?: number;
     opusOnly?: boolean;
-    rateLimiterOffset?: number
-    requestTimeout?: number
+    rateLimiterOffset?: number;
+    requestTimeout?: number;
     reconnectDelay?: ReconnectDelayFunction;
     restMode?: boolean;
     seedVoiceConnections?: boolean;
