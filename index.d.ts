@@ -1673,8 +1673,6 @@ declare namespace Eris {
     approximatePresenceCount: number;
     description: string | null;
     discoverySplash: string | null;
-    dynamicIconURL(format?: string, size?: number): string;
-    dynamicSplashURL(format?: string, size?: number): string;
     emojis: Emoji[];
     features: string[];
     icon: string | null;
@@ -1684,6 +1682,8 @@ declare namespace Eris {
     splash: string | null;
     splashURL: string | null;
     constructor(data: BaseData, client: Client);
+    dynamicIconURL(format?: string, size?: number): string;
+    dynamicSplashURL(format?: string, size?: number): string;
   }
 
   export class Invite extends Base {
