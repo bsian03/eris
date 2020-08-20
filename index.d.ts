@@ -1311,7 +1311,7 @@ declare namespace Eris {
     ): Promise<Emoji>;
     editGuildIntegration(guildID: string, integrationID: string, options: IntegrationOptions): Promise<void>;
     editGuildMember(guildID: string, memberID: string, options: MemberOptions, reason?: string): Promise<void>;
-    editGuildWidget(guildID: string, options: Widget) : Promise<Widget>
+    editGuildWidget(guildID: string, options: Widget): Promise<Widget>
     editMessage(channelID: string, messageID: string, content: MessageContent): Promise<Message>;
     editNickname(guildID: string, nick: string, reason?: string): Promise<void>;
     editRole(guildID: string, roleID: string, options: RoleOptions, reason?: string): Promise<Role>; // TODO not all options are available?
@@ -1354,7 +1354,7 @@ declare namespace Eris {
     getGuildPreview(guildID: string): Promise<GuildPreview>;
     getGuildVanity(guildID: string): Promise<{ code?: string; uses?: number }>;
     getGuildWebhooks(guildID: string): Promise<Webhook[]>;
-    getGuildWidget(guildID: string) : Promise<Widget>;
+    getGuildWidget(guildID: string): Promise<Widget>;
     getInvite(inviteID: string, withCounts?: false): Promise<Invite & InviteWithoutMetadata<null>>;
     getInvite(inviteID: string, withCounts: true): Promise<Invite & InviteWithoutMetadata<boolean>>;
     getMessage(channelID: string, messageID: string): Promise<Message>;
