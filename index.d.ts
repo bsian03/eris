@@ -152,9 +152,14 @@ declare namespace Eris {
     largeThreshold?: number;
     lastShardID?: number;
     latencyThreshold?: number;
+    // Note: add maxReconnectAttmpets
+    // Note: add maxResumeAttemps
     maxShards?: number | "auto";
     messageLimit?: number;
     opusOnly?: boolean;
+    // Note: add rateLimiterOffset
+    // Note add requestTimout
+    // Note: remove reconnectAttemps
     reconnectAttempts?: number;
     reconnectDelay?: ReconnectDelayFunction;
     restMode?: boolean;
@@ -504,6 +509,7 @@ declare namespace Eris {
     icon?: string;
     region?: string;
     roles?: PartialRole[];
+    systemChannelID: string;
     verificationLevel?: number;
   }
   interface GetPruneOptions {
@@ -1213,6 +1219,7 @@ declare namespace Eris {
     ): Promise<Webhook>;
     createGroupChannel(userIDs: string[]): Promise<GroupChannel>;
     createGuild(name: string, options?: CreateGuildOptions): Promise<Guild>;
+    // EmojiOptions has options.icon. Supposed to be options.image
     createGuildEmoji(guildID: string, options: EmojiOptions, reason?: string): Promise<Emoji>;
     createMessage(channelID: string, content: MessageContent, file?: MessageFile | MessageFile[]): Promise<Message>;
     createRole(guildID: string, options?: RoleOptions | Role, reason?: string): Promise<Role>;
@@ -1374,6 +1381,7 @@ declare namespace Eris {
     leaveGuild(guildID: string): Promise<void>;
     leaveVoiceChannel(channelID: string): void;
     pinMessage(channelID: string, messageID: string): Promise<void>;
+    // Note: PruneMemberOptions is missing `computerPruneCount`
     pruneMembers(guildID: string, options?: PruneMemberOptions): Promise<number>;
     purgeChannel(
       channelID: string,
