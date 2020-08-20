@@ -1803,10 +1803,9 @@ declare namespace Eris {
   }
 
   export class PermissionOverwrite extends Permission {
-    createdAt: number;
     id: string;
     type: string;
-    constructor(data: { allow: number; deny: number });
+    constructor(data: { allow: number; deny: number , id: string, type: "member" | "role"});
   }
 
   export class PrivateChannel extends Channel implements Textable {
