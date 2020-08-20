@@ -1631,7 +1631,6 @@ declare namespace Eris {
     position: number;
     type: Exclude<ChannelTypes, 1 | 3>;
     constructor(data: BaseData, guild: Guild);
-    createInvite(options?: CreateInviteOptions, reason?: string): Promise<Invite & InviteWithoutMetadata<null>>;
     delete(reason?: string): Promise<void>;
     deletePermission(overwriteID: string, reason?: string): Promise<void>;
     edit(options: Omit<EditChannelOptions, "icon" | "ownerID">, reason?: string): Promise<this>;
