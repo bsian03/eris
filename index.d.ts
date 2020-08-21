@@ -749,8 +749,8 @@ declare namespace Eris {
     frameSize?: number;
     inlineVolume?: boolean;
     inputArgs?: string[];
-    voiceDataTimeout?: number;
     sampleRate?: number;
+    voiceDataTimeout?: number;
   }
   interface VoiceStreamCurrent {
     options: VoiceResourceOptions;
