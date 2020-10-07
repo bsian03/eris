@@ -320,7 +320,7 @@ declare namespace Eris {
     managed: boolean;
     require_colons: boolean;
     roles: string[];
-    user: { avatar: string; discriminator: string; id: string; name: string };
+    user: PartialUser;
   }
   interface EmojiBase {
     icon?: string;
@@ -471,7 +471,7 @@ declare namespace Eris {
     (event: "typingStart", listener: (channel: TextableChannel | { id: string }, user: User | { id: string }) => void): T;
     (
       event: "userUpdate",
-      listener: (user: User, oldUser: { username: string; discriminator: string; avatar?: string } | null) => void
+      listener: (user: User, oldUser: PartialUser | null) => void
     ): T;
     (event: "voiceChannelJoin", listener: (member: Member, newChannel: VoiceChannel) => void): T;
     (event: "voiceChannelLeave", listener: (member: Member, oldChannel: VoiceChannel) => void): T;
@@ -807,12 +807,7 @@ declare namespace Eris {
     id: string;
     name: string;
     token: string;
-    user: {
-      avatar?: string;
-      discriminator: string;
-      id: string;
-      username: string;
-    };
+    user: PartialUser;
   }
   interface WebhookOptions {
     avatar?: string;
@@ -861,7 +856,7 @@ declare namespace Eris {
     membership_state: number;
     permissions: string[];
     team_id: string;
-    user: { username: string; discriminator: string; id: string; avatar: string | null };
+    user: PartialUser;
   }
   interface Constants {
     AuditLogActions: {
@@ -1133,7 +1128,7 @@ declare namespace Eris {
     connected_accounts: { verified: boolean; type: string; id: string; name: string }[];
     mutual_guilds: { nick?: string; id: string }[];
     premium_since?: number;
-    user: { username: string; discriminator: string; flags: number; id: string; avatar?: string };
+    user: PartialUser & { flags: number };
   }
   interface UserSettings {
     afk_timeout: number;
@@ -2258,6 +2253,13 @@ declare namespace Eris {
     getProfile(): Promise<UserProfile>;
 
     removeRelationship(): Promise<void>;
+  }
+
+  export interface PartialUser {
+    avatar: string | null;
+    discriminator: string;
+    id: string;
+    username: string;
   }
 
   export class VoiceChannel extends GuildChannel implements Invitable {
