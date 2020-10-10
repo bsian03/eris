@@ -1947,7 +1947,6 @@ declare namespace Eris {
     edit(content: MessageContent): Promise<Message<T>>;
     getReaction(reaction: string, limit?: number, before?: string, after?: string): Promise<User[]>;
     pin(): Promise<void>;
-    /** @deprecated */
     removeReaction(reaction: string, userID: string): Promise<void>;
     removeReaction(reaction: string): Promise<void>;
     removeReactionEmoji(reaction: string): Promise<void>;
@@ -2027,7 +2026,6 @@ declare namespace Eris {
     getPins(): Promise<Message<PrivateChannel>[]>;
     leave(): Promise<void>;
     pinMessage(messageID: string): Promise<void>;
-    /** @deprecated */
     removeMessageReaction(messageID: string, reaction: string, userID: string): Promise<void>;
     removeMessageReaction(messageID: string, reaction: string): Promise<void>;
     ring(recipient: string[]): void;
