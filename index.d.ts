@@ -637,7 +637,7 @@ declare namespace Eris {
     type: Exclude<ChannelTypes, 1>;
   }
 
-  // Member
+  // Member/User
   interface FetchMembersOptions {
     limit?: number;
     presences?: boolean;
@@ -665,6 +665,12 @@ declare namespace Eris {
     res: (value?: unknown) => void;
     received: number;
     timeout: NodeJS.Timer;
+  }
+  interface PartialUser {
+    avatar: string | null;
+    discriminator: string;
+    id: string;
+    username: string;
   }
 
   // Message
@@ -2253,13 +2259,6 @@ declare namespace Eris {
     getProfile(): Promise<UserProfile>;
 
     removeRelationship(): Promise<void>;
-  }
-
-  export interface PartialUser {
-    avatar: string | null;
-    discriminator: string;
-    id: string;
-    username: string;
   }
 
   export class VoiceChannel extends GuildChannel implements Invitable {
