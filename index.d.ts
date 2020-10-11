@@ -656,6 +656,12 @@ declare namespace Eris {
     id: string;
     user: User;
   }
+  interface PartialUser {
+    avatar: string | null;
+    discriminator: string;
+    id: string;
+    username: string;
+  }
   interface RequestGuildMembersOptions extends Omit<FetchMembersOptions, "userIDs"> {
     user_ids?: string[];
     nonce: string;
@@ -665,12 +671,6 @@ declare namespace Eris {
     res: (value?: unknown) => void;
     received: number;
     timeout: NodeJS.Timer;
-  }
-  interface PartialUser {
-    avatar: string | null;
-    discriminator: string;
-    id: string;
-    username: string;
   }
 
   // Message
