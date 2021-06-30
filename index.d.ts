@@ -69,7 +69,7 @@ declare namespace Eris {
   type Status = "online" | "idle" | "dnd" | "offline";
 
   // Thread
-  type EditThreadOptions = Pick<EditChannelOptions, "archived" | "autoArchiveDuration" | "locked" | "name" | "rateLimitPerUser">;
+  type AutoArchiveDuration = 60 | 1440 | 4320 | 10080;
 
   // Voice
   type ConverterCommand = "./ffmpeg" | "./avconv" | "ffmpeg" | "avconv";
@@ -113,7 +113,8 @@ declare namespace Eris {
   }
   interface EditChannelOptions extends Omit<CreateChannelOptions, "permissionOverwrites" | "reason"> {
     archived?: boolean;
-    autoArchiveDuration?: number;
+    autoArchiveDuration?: AutoArchiveDuration;
+    defaultAutoArchiveDuration?: AutoArchiveDuration;
     icon?: string;
     locked?: boolean;
     name?: string;
@@ -1017,7 +1018,7 @@ declare namespace Eris {
     threads: T[];
   }
   interface CreateThreadOptions {
-    autoArchiveDuration: number;
+    autoArchiveDuration: AutoArchiveDuration;
     name: string;
   }
   interface CreateThreadWithoutMessageOptions extends CreateThreadOptions {
@@ -1030,7 +1031,7 @@ declare namespace Eris {
   interface ThreadMetadata {
     archiveTimestamp: number;
     archived: boolean;
-    autoArchiveDuration: number;
+    autoArchiveDuration: AutoArchiveDuration;
     locked?: boolean;
   }
 
@@ -2682,7 +2683,7 @@ declare namespace Eris {
   }
 
   export class TextChannel extends GuildChannel implements GuildTextable, Invitable {
-    defaultAutoArchiveDuration: 60 | 1440 | 4320 | 10080;
+    defaultAutoArchiveDuration: AutoArchiveDuration;
     lastMessageID: string;
     lastPinTimestamp: number | null;
     messages: Collection<Message<this>>;
