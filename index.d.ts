@@ -818,7 +818,7 @@ declare namespace Eris {
   interface RawRESTRequest {
     auth: boolean;
     body?: unknown;
-    file?: FileContent;
+    files?: FileContent[];
     method: string;
     resp: IncomingMessage;
     route: string;
@@ -830,6 +830,17 @@ declare namespace Eris {
     received: number;
     res: (value: Member[]) => void;
     timeout: NodeJS.Timeout;
+  }
+  interface RequestOptions {
+    auth?: boolean;
+    body?: Record<string, unknown>;
+    files?: FileContent[];
+    formdata?: boolean;
+    method: RequestMethod;
+    reason?: string;
+    route?: string;
+    short?: boolean;
+    url: string;
   }
   interface ShardManagerOptions {
     concurrency?: number | "auto";
@@ -3306,6 +3317,8 @@ declare namespace Eris {
     /** @deprecated */
     constructor(client: Client, forceQueueing?: boolean);
     globalUnblock(): void;
+    request(options: RequestOptions): Promise<unknown>;
+    /** @deprecated */
     request(method: RequestMethod, url: string, auth?: boolean, body?: { [s: string]: unknown }, file?: FileContent, _route?: string, short?: boolean): Promise<unknown>;
     routefy(url: string, method: RequestMethod): string;
     toString(): string;
