@@ -485,3 +485,9 @@ export enum VoiceOPCodes {
   RESUMED,
   CLIENT_DISCONNECT = 13, //NOTE - Removed deprecated DISCONNECT
 }
+
+export enum WebhookTypes {
+  INCOMING = 1,
+  CHANNEL_FOLLOWER,
+  APPLICATION,
+}
