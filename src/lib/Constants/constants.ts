@@ -437,3 +437,51 @@ export enum SystemChannelFlags {
 }
 
 //FIXME - System Join Messages removed
+
+//TODO - ThreadMemberFlags is undocumented. Have asked Donovan for info https://canary.discord.com/channels/831967755447828491/831967755447828500/1168340029408559184
+
+export enum UserFlags { //FIXME - Removed UserFlags.NONE
+  STAFF = 1 << 0, //FIXME - Renamed from DISCORD_STAFF
+  PARTNER = 1 << 1, //NOTE - Removed deprecated PARTNERED_SERVER_OWNER and DISCORD_PARTNER
+  HYPESQUAD = 1 << 2, //NOTE - Removed deprecated HYPESQUAD_EVENTS,
+  BUG_HUNTER_LEVEL_1 = 1 << 3,
+  HYPESQUAD_ONLINE_HOUSE_1 = 1 << 6, //FIXME - Removed HOUSE_NAME for all 3 houses
+  HYPESQUAD_ONLINE_HOUSE_2 = 1 << 7,
+  HYPESQUAD_ONLINE_HOUSE_3 = 1 << 8,
+  PREMIUM_EARLY_SUPPORTER = 1 << 9, //NOTE - Remove deprecated EARLY_SUPPORTER
+  TEAM_PSEUDO_USER = 1 << 10,
+  SYSTEM = 1 << 12, //FIXME - Deprecated/Undocumented on API
+  BUG_HUNTER_LEVEL_2 = 1 << 14,
+  VERIFIED_BOT = 1 << 16,
+  VERIFIED_DEVELOPER = 1 << 17, //NOTE - Removed deprecated EARLY_VERIFIED_BOT_DEVELOPER and VERIFIED_BOT_DEVELOPER
+  CERTIFIED_MODERATOR = 1 << 18, //NOTE - Removed deprecated DISCORD_CERTIFIED_MODERATOR
+  BOT_HTTP_INTERACTIONS = 1 << 19,
+  ACTIVE_DEVELOPER = 1 << 22,
+}
+
+export enum VerificationLevels {
+  NONE,
+  LOW,
+  MEDIUM,
+  HIGH,
+  VERY_HIGH,
+}
+
+export enum VideoQualityModes {
+  AUTO = 1,
+  FULL,
+}
+
+export enum VoiceOPCodes {
+  IDENTIFY,
+  SELECT_PROTOCOL,
+  READY,
+  HEARTBEAT,
+  SESSION_DESCRIPTION,
+  SPEAKING,
+  HEARTBEAT_ACK,
+  RESUME,
+  HELLO,
+  RESUMED,
+  CLIENT_DISCONNECT = 13, //NOTE - Removed deprecated DISCONNECT
+}
