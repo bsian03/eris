@@ -1,3 +1,5 @@
+export const DiscordEpoch = 1420070400000;
+
 export enum ActivityTypes {
   GAME,
   STREAMING,
@@ -224,7 +226,14 @@ export enum GuildNSFWLevels {
   AGE_RESTRICTED,
 }
 
-//TODO - Image formats - enum or type?
+export enum ImageFormats {
+  JPEG = "jpeg",
+  JPG = "jpg",
+  PNG = "png",
+  WEBP = "webp",
+  GIF = "gif",
+  LOTTIE = "json"
+}
 
 export enum ImageSizeBoundaries {
   MINIMUM = 16,
@@ -416,6 +425,13 @@ export enum StageInstancePrivacyLevel {
 }
 
 export enum StickerFormats {
+  PNG = "png",
+  APNG = "apng",
+  LOTTIE = "json",
+  GIF = "gif",
+}
+
+export enum StickerFormatTypes { //FIXME - Renamed from StickerFormats. StickerFormats now actually has format enums so BREAKING URGENT
   PNG = 1,
   APNG,
   LOTTIE,
