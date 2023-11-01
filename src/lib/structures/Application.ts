@@ -1,3 +1,5 @@
+import { ApplicationFlags } from "../Constants/constants";
+import { ApplicationInstallParams } from "../Constants/types";
 import Base from "./Base";
 
 export default class Application extends Base {
@@ -20,12 +22,12 @@ export default class Application extends Base {
   primarySKUID?: string;
   slug?: string;
   coverImage?: string;
-  flags?: number;
+  flags?: ApplicationFlags;
   approximateGuildCount?: number;
   redirectURIs?: string[];
   interactionsEndpointURL?: string;
   roleConnectionsVerificationURL?: string;
   tags?: string[];
-  installParams?: unknown; // TODO - Install params object
+  installParams?: ApplicationInstallParams; // TODO - Install params object
   customInstallURL?: string;
 }
