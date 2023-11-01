@@ -1,6 +1,6 @@
 import Base from "./Base";
 
-export default class ApplicationCommand extends Base {
+export default class Application extends Base {
   name: string;
   icon: string | null;
   description: string;
