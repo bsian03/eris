@@ -1,5 +1,7 @@
 export const DiscordEpoch = 1420070400000;
 
+export const ChatInputRegex = /^[-_\p{L}\p{N}\p{sc=Deva}\p{sc=Thai}]{1,32}$/u
+
 export enum ActivityTypes {
   GAME,
   STREAMING,
@@ -20,6 +22,7 @@ export enum ApplicationCommandOptionTypes {
   ROLE,
   MENTIONABLE,
   NUMBER,
+  ATTACHMENT,
 }
 
 export enum ApplicationCommandPermissionTypes {
@@ -28,7 +31,7 @@ export enum ApplicationCommandPermissionTypes {
   CHANNEL, //NOTE - New
 }
 
-export enum ApplcationCommandTypes {
+export enum ApplicationCommandTypes {
   CHAT_INPUT = 1,
   USER,
   MESSAGE,
